@@ -20,6 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'img_publisher = carl_cv.picam_pub:main',
+            'img_subscriber = carl_cv.picam_sub:main',
         ],
     },
 )
