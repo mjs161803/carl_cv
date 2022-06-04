@@ -23,18 +23,13 @@ class ImagePublisher(Node):
         if ret == True:
             self.get_logger().info('Publishing video frame')
 
-    def main(args=None):
+def main(args=None):
+    rclpy.init(args=args)
+    image_publisher = ImagePublisher()
+    rclpy.spin(image_publisher)
+    image_publisher.destroy_node()
+    rclpy.shutdown()
 
-        rclpy.init(args=args)
-
-        image_publisher = ImagePublisher()
-
-        rclpy.spin(image_publisher)
-
-        image_publisher.destroy_node()
-
-        rclpy.shutdown()
-
-    if __name__ == '__main__':
-        main()
+if __name__ == '__main__':
+    main()
 
