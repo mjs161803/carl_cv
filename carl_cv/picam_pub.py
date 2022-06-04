@@ -1,8 +1,8 @@
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
-from cv_bridge import CvBridge # Package to convert between ROS and OpenCV Images
 import cv2 # OpenCV library
+from cv_bridge import CvBridge # Package to convert between ROS and OpenCV Images
 
 class ImagePublisher(Node):
     def __init__(self):
